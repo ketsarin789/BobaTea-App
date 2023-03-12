@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import {  View } from 'react-native';
+// import { MainPage } from './pages/MainPage';
+import { HomeScreen } from './pages/HomeScreen';
+import CartProvider from './CartContext';
+import { NavigationContainer } from '@react-navigation/native';
+import { MyTabs } from './pages/MyTabs';
+//import { Footer } from './pages/Footer';
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+return (
+    <CartProvider>
+   
+        <NavigationContainer>
+          <MyTabs />
+          
+          {/* <Footer /> */}
+        </NavigationContainer>
+    
+    </CartProvider>
   );
 }
+//we use before use myTab
+{/* <CartProvider>
+<NavigationContainer>
+  <MainPage />
+  <HomeScreen />
+  <Footer />
+</NavigationContainer>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+</CartProvider> */}
+
